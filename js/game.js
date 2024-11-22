@@ -1,4 +1,4 @@
-﻿// 動物リストと画像データ
+// 動物リストと画像データ
 const animals = [
     { name: "ライオン", image: "assets/images/lion.png" },
     { name: "キリン", image: "assets/images/giraffe.png" },
