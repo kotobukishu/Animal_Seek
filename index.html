@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,13 +11,16 @@
         <h1>葉っぱに隠れた動物を当てよう！</h1>
         <div id="leaf-container">
             <!-- 葉っぱが隠れる場所 -->
-            <div id="leaf"></div>
+            <div class="leaf" id="leaf-1"></div>
+            <div class="leaf" id="leaf-2"></div>
+            <div class="leaf" id="leaf-3"></div>
         </div>
         <div id="choices-container">
-            <!-- 動物の名前を選ぶ場所 -->
-            <button class="choice-button">ライオン</button>
-            <button class="choice-button">キリン</button>
-            <button class="choice-button">ゾウ</button>
+            <!-- 動物のボタン -->
+            <button class="choice-button" id="choice-lion"></button>
+            <button class="choice-button" id="choice-giraffe"></button>
+            <button class="choice-button" id="choice-elephant"></button>
+            <div id="leaf"></div>
         </div>
         <div id="result"></div>
     </div>

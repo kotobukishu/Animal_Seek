@@ -21,6 +21,41 @@ h1 {
     width: 300px;
     height: 300px;
     margin: 20px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.leaf {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    background-image: url('../assets/images/leaf.png');
+    border: 3px solid transparent;
+    transition: border-color 0.5s ease;
+}
+
+    .leaf.glow {
+        border-color: red;
+    }
+
+.choice-button {
+    width: 80px;
+    height: 80px;
+    background-size: cover;
+    background-position: center;
+    border: none;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+    .choice-button:hover {
+        transform: scale(1.1);
+    }
+
+=======
 }
 
 .choice-button {
@@ -40,21 +75,10 @@ h1 {
         background-color: #45a049;
     }
 
-/* テキストメッセージ用のスタイル */
+/* 繝�繧ｭ繧ｹ繝医Γ繝�繧ｻ繝ｼ繧ｸ逕ｨ縺ｮ繧ｹ繧ｿ繧､繝ｫ */
 #result {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
-}
-
-/* 葉っぱ画像や動物画像のスタイル */
-#leaf {
-    width: 200px; /* 必要に応じて調整 */
-    height: 200px; /* 必要に応じて調整 */
-    background-size: cover;
-    background-position: center;
-    margin: 0 auto;
-    display: block; /* 初期状態は表示 */
-    transition: background-image 0.5s ease; /* スムーズに画像を切り替える */
 }
