@@ -7,6 +7,7 @@ const animals = [
 
 // 動的変数
 let currentAnimals = [];
+let shuffledChoices = [];
 let glowingLeafIndex = null;
 const leafElements = document.querySelectorAll(".leaf");
 const choices = document.querySelectorAll(".choice-button");
@@ -23,9 +24,10 @@ function initGame() {
         leaf.classList.remove("glow");
     });
 
-    // ボタンに動物の画像を設定
+    // ボタンの並びをランダム化
+    shuffledChoices = shuffleArray([...currentAnimals]);
     choices.forEach((choice, index) => {
-        choice.style.backgroundImage = `url(${currentAnimals[index].image})`;
+        choice.style.backgroundImage = `url(${shuffledChoices[index].image})`;
     });
 
     // 2秒後に葉っぱで隠す
@@ -49,7 +51,7 @@ function shuffleArray(array) {
 }
 
 // プレイヤーの選択を確認
-choices.forEach((choice, index) => {
+choices.forEach((choice) => {
     choice.addEventListener("click", () => {
         const selectedAnimal = currentAnimals[glowingLeafIndex];
 
