@@ -9,6 +9,7 @@ const animals = [
 let currentAnimals = [];
 let shuffledChoices = [];
 let glowingLeafIndex = null;
+let isAnsweringAllowed = false; // 回答可能フラグ
 
 // DOM要素の取得
 const animalElements = document.querySelectorAll(".animal");
@@ -20,10 +21,10 @@ const result = document.getElementById("result");
 function initGame() {
     result.textContent = ""; // 前回の結果をリセット
     result.style.opacity = "0"; // 結果を非表示にする
+    isAnsweringAllowed = false; // アニメーション中は回答不可
 
     currentAnimals = shuffleArray(animals); // 動物の順序をランダムに
     shuffledChoices = shuffleArray([...currentAnimals]); // 回答ボタンもランダムに
-
 
     // 動物の初期化
     animalElements.forEach((animal, index) => {
@@ -50,7 +51,7 @@ function initGame() {
     setTimeout(() => {
         animalElements.forEach((animal) => {
             animal.style.transform = "translateY(140px)"; // 動物を葉っぱに重なる位置に移動
-            
+
             setTimeout(() => {
                 animal.style.opacity = "0"; // 動物を非表示にする
             }, 2000); // アニメーション終了後に非表示
@@ -67,6 +68,8 @@ function initGame() {
                 choice.style.backgroundImage = `url(${shuffledChoices[index].image})`; // ボタン画像を設定
                 choice.classList.add("show"); // ボタンを表示
             });
+
+            isAnsweringAllowed = true; // 回答可能に設定
         }, 2000); // 動物が隠れるアニメーション後
     }, 100); // タイミング調整用
 }
@@ -79,6 +82,9 @@ function shuffleArray(array) {
 // 回答ボタンのクリックイベントリスナー
 choices.forEach((choice, index) => {
     choice.addEventListener("click", () => {
+        if (!isAnsweringAllowed) return; // 回答可能でない場合は無視
+
+        isAnsweringAllowed = false; // 1回回答したら無効化
         const selectedAnimal = currentAnimals[glowingLeafIndex]; // 赤く光った葉っぱに隠れた動物
 
         // 正解判定
