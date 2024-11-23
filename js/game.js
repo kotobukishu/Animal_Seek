@@ -99,9 +99,17 @@ choices.forEach((choice, index) => {
         result.style.opacity = "1"; // 結果を表示
 
         leafElements[glowingLeafIndex].style.backgroundImage = `url(${selectedAnimal.image})`; // 答え合わせで動物を表示
+        // 次の問題のために動物を葉っぱの外に移動させておく
+        setTimeout(() => {
+            animalElements.forEach((animal) => {
+                animal.style.transform = "translateY(0px)"; // 動物を葉っぱの外に移動
+
+                animal.classList.add("move-down"); // アニメーションを開始
+            });
+        });
         leafElements[glowingLeafIndex].classList.remove("glow"); // 赤く光る効果を削除
 
-        setTimeout(initGame, 2000); // 次の問題を開始
+        setTimeout(initGame, 5000); // 次の問題を開始
     });
 });
 
