@@ -29,7 +29,7 @@ h1 {
     position: relative;
     transform: translateY(0); /* 初期位置 */
     opacity: 1; /* 初期透明度 */
-    transition: transform 2s ease-in-out, opacity 0.5s ease-in-out; /* アニメーション設定 */
+    transition: transform 4s ease-in-out, opacity 2s ease-in-out; /* アニメーション設定 */
 }
 
 
