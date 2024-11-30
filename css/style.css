@@ -20,7 +20,7 @@ h1 {
 #animal-container {
     display: flex;
     justify-content: space-around;
-    margin: 40px auto; /* “®•¨‚Æ—t‚Á‚Ï‚Ì‹——£‚ð2”{‚É */
+    margin: 20px auto; /* “®•¨‚Æ—t‚Á‚Ï‚Ì‹——£‚ð2”{‚É */
 }
 
 .animal {
