@@ -14,7 +14,6 @@ body {
 h1 {
     color: #4caf50;
     font-size: clamp(5px, 15vw, 30px); /* 最小16px, 最大20px, ビューポート幅に応じて調整 */
-    white-space: nowrap;
     max-width: 600px; /* 親要素内に収める */
 }
 
