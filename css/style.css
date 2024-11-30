@@ -13,7 +13,8 @@ body {
 
 h1 {
     color: #4caf50;
-    font-size:20px
+    font-size: clamp(16px, 9vw, 30px); /* 最小16px, 最大20px, ビューポート幅に応じて調整 */
+    white-space: nowrap;
 }
 
 #animal-container {
