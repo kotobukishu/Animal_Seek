@@ -50,7 +50,7 @@ function initGame() {
     // 動物をアニメーションで葉っぱに移動させる
     setTimeout(() => {
         animalElements.forEach((animal) => {
-            animal.style.transform = "translateY(120px)"; // 動物を葉っぱに重なる位置に移動
+            animal.style.transform = "translateY(140px)"; // 動物を葉っぱに重なる位置に移動
 
             setTimeout(() => {
                 animal.style.opacity = "0"; // 動物を非表示にする

@@ -39,7 +39,7 @@ h1 {
 #leaf-container {
     display: flex;
     justify-content: space-around;
-    margin: 20px auto;
+    margin: 40px auto;
 }
 
 .leaf {
