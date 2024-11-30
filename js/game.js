@@ -70,7 +70,7 @@ function initGame() {
             });
 
             isAnsweringAllowed = true; // 回答可能に設定
-        }, 3500); // 動物が隠れるアニメーション後
+        }, 2500); // 動物が隠れるアニメーション後
     }, 100); // タイミング調整用
 }
 
@@ -89,10 +89,10 @@ choices.forEach((choice, index) => {
 
         // 正解判定
         if (choice.style.backgroundImage.includes(selectedAnimal.image)) {
-            result.textContent = "〇 正解！"; // 正解のメッセージ
+            result.textContent = "〇 やったね！"; // 正解のメッセージ
             result.style.color = "green"; // 緑色で表示
         } else {
-            result.textContent = "× 不正解！"; // 不正解のメッセージ
+            result.textContent = "× ざんねん！"; // 不正解のメッセージ
             result.style.color = "red"; // 赤色で表示
         }
 
